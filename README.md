@@ -9,14 +9,16 @@ As arguments you should give:
 1) Initial state of FSM.
 2) A dictionary of states and transitions for each state.
 E.g. : 
+
 state_l = {}
- \nstate_l['Going'] = [('Go', None, 'Going'), ('Stop', None, 'Staying'), ('Jump', None, 'Jumping')]
+
+state_l['Going'] = [('Go', None, 'Going'), ('Stop', None, 'Staying'), ('Jump', None, 'Jumping')]
 
 state_l['Staying'] = [('Go', None, 'Going'), ('Stop', None, 'Staying'), ('Jump', None, 'Jumping')]
 
 state_l['Jumping'] = [('Go', None, 'Going'), ('Jump', 'Jumping', 'Staying'), ('Jump', 'Going', 'Jumping')]
 
-finite_state_machine = FSM('Staying', state_l) \n
+finite_state_machine = FSM('Staying', state_l)
 
 This will create a new finite state machine with a table of transactions given in a dictionary.
 Each tuple contains three values:
